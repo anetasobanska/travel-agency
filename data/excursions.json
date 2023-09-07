@@ -1,4 +1,54 @@
 {
-    "excursions": [],
-    "orders": []
+  "excursions": [
+    {
+      "title": "gdansk",
+      "description": "opis gdanska",
+      "priceAdult": 500,
+      "priceChild": 200,
+      "id": 1
+    },
+    {
+      "title": "krakow",
+      "description": "opis krakowa",
+      "priceAdult": 400,
+      "priceChild": 300,
+      "id": 3
+    },
+    {
+      "title": "lublin",
+      "description": "opis miasta",
+      "priceAdult": 200,
+      "priceChild": 300,
+      "id": 6
+    },
+    {
+      "title": "zamosc",
+      "description": "opis",
+      "priceAdult": 200,
+      "priceChild": 100,
+      "id": 8
+    },
+    {
+      "title": "gniezno",
+      "description": "opis",
+      "priceAdult": 200,
+      "priceChild": 200,
+      "id": 10
+    },
+    {
+      "title": "kazimierz",
+      "description": "opis",
+      "priceAdult": 200,
+      "priceChild": 200,
+      "id": 13
+    },
+    {
+      "title": "olsztyn",
+      "description": "opis",
+      "priceAdult": 200,
+      "priceChild": 200,
+      "id": 14
+    }
+  ],
+  "orders": []
 }
