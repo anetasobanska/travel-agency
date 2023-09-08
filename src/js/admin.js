@@ -38,6 +38,7 @@ function init() {
   loadExcursions();
   addExcursion();
   removeExcursion();
+  updateExcursions();
 }
 
 function loadExcursions() {
@@ -141,6 +142,8 @@ function insertExcursion(data) {
     adultPrice.innerText = item.priceAdult;
     childPrice.innerText = item.priceChild;
     liProtoClone.dataset.id = item.id;
+
+    addEditableData(title, description, adultPrice, childPrice);
   });
 }
 
@@ -165,6 +168,53 @@ function removeExcursion() {
   });
 }
 
+function updateExcursions() {
+  const excursions = document.querySelector('.excursions');
+  excursions.addEventListener('click', (e) => {
+    const targetEl = e.target;
+    if (targetEl.classList.contains('excursions__field-input--update')) {
+      const parentEl = targetEl.parentElement.parentElement.parentElement;
+      const editableFieldList = parentEl.querySelectorAll('[data=editable]');
+      const isEditable = [...editableFieldList].every(
+        (field) => field.isContentEditable
+      );
+
+      if (isEditable) {
+        const id = parentEl.dataset.id;
+        const data = {
+          title: editableFieldList[0].innerText,
+          description: editableFieldList[1].innerText,
+          priceAdult: editableFieldList[2].innerText,
+          priceChild: editableFieldList[3].innerText,
+        };
+        api
+          .update(id, data)
+          .catch((err) => console.error(err))
+          .finally(() => {
+            targetEl.value = 'edit';
+            editableFieldList.forEach((field) => {
+              field.contentEditable = false;
+              field.style.color = 'black';
+            });
+          });
+      } else {
+        targetEl.value = 'save';
+        editableFieldList.forEach((field) => {
+          field.contentEditable = true;
+          field.style.color = 'red';
+        });
+      }
+    }
+  });
+}
+
 function clearElement(element) {
   element.innerHTML = '';
+}
+
+function addEditableData(title, description, adultPrice, childPrice) {
+  title.setAttribute('data', 'editable');
+  description.setAttribute('data', 'editable');
+  adultPrice.setAttribute('data', 'editable');
+  childPrice.setAttribute('data', 'editable');
 }
