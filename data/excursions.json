@@ -57,5 +57,22 @@
       "id": 15
     }
   ],
-  "orders": []
+  "orders": [
+    {
+      "title": "gdansk",
+      "adultNumber": 2,
+      "adultPriceNum": 500,
+      "childNumber": 3,
+      "childPriceNum": 200,
+      "id": 1
+    },
+    {
+      "title": "krakow",
+      "adultNumber": 2,
+      "adultPriceNum": 400,
+      "childNumber": 1,
+      "childPriceNum": 300,
+      "id": 2
+    }
+  ]
 }
