@@ -149,17 +149,17 @@ function calculateAndShowSummary(
 
   titleOfExcursion.innerText = title;
   totalPrice.innerText =
-    adultNumber * adultPrice + childNumber * childPrice + 'PLN';
+    adultNumber * adultPrice + childNumber * childPrice + 'EUR';
   summaryPrices.innerText =
-    'dorośli: ' +
+    'adults: ' +
     adultNumber +
     ' x ' +
     adultPrice +
-    'PLN, dzieci: ' +
+    'EUR, children: ' +
     childNumber +
     ' x ' +
     childPrice +
-    'PLN';
+    'EUR';
 
   if (!isNaN(adultNumber) && !isNaN(childNumber)) {
     summary.appendChild(cloneSummaryItemPrototype);
@@ -214,7 +214,6 @@ function confirmOrder(e, fields, order, ulMessages) {
   const totalPrice = Number(
     order.firstElementChild.firstElementChild.textContent.replace(/\D/g, '')
   );
-  console.log('totalPrice', totalPrice);
 
   const newBasket = {
     excursions: basket,

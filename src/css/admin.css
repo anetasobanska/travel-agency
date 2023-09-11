@@ -1,7 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&family=Poppins:wght@300;400;500&display=swap');
+
+:root {
+  --main-one: #bd8e83;
+  --main-two: #749eb2;
+  --main-three: #e9dac4;
+  --main-four: #ac8e60;
+  --border-radius-btn: 5px;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
 }
 
 ul {
@@ -24,12 +35,38 @@ ul {
   flex-wrap: wrap;
 }
 
-.excurions__item {
+.excursions__description {
+  padding: 5px 0 10px 0;
+}
+
+.excursions__field {
+  padding: 5px 0;
+}
+
+.excursions__field-input,
+.order__field-submit {
+  border-radius: var(--border-radius-btn);
+  border-color: transparent;
+  text-transform: uppercase;
+  margin-right: 5px;
+  padding: 4px 6px;
+  color: #ffffff;
+}
+
+.excursions__field-input--update {
+  background-color: var(--main-two);
+}
+.excursions__field-input--remove {
+  background-color: red;
+}
+
+.excursions__item {
   border: 1px solid #bbb;
   border-radius: 5px;
   margin: 10px;
   padding: 20px;
   width: calc(50% - 20px);
+  background-color: var(--main-three);
 }
 
 .excursions__item--prototype {
@@ -37,9 +74,12 @@ ul {
 }
 
 .panel__form {
-  background-color: #f4f4f4;
+  background-color: var(--main-two);
+  border-radius: var(--border-radius-btn);
+  margin-top: 10px;
   padding: 20px;
   width: 30%;
+  color: #ffffff;
 }
 
 .uploader,
@@ -50,9 +90,18 @@ ul {
 }
 
 .form__field {
+  border-radius: var(--border-radius-btn);
+  border-color: transparent;
   display: block;
 }
 
 .form__field--longtext {
   height: 100px;
+}
+
+.form__row {
+  margin-bottom: 5px;
+}
+.order__field-submit {
+  background-color: var(--main-four);
 }

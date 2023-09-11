@@ -1,12 +1,12 @@
 export const numOfPeopleFields = [
   {
     name: 'adults',
-    label: 'Dorosły',
+    label: 'Adults',
     type: 'number',
   },
   {
     name: 'children',
-    label: 'Dziecko',
+    label: 'Children',
     type: 'number',
   },
 ];

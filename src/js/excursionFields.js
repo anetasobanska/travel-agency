@@ -1,25 +1,25 @@
 export const excursionFields = [
   {
     name: 'name',
-    label: 'Nazwa',
+    label: 'Name',
     required: true,
     pattern: '^[a-zA-Z –-]+$',
   },
   {
     name: 'description',
-    label: 'Opis',
+    label: 'Description',
     required: true,
     pattern: '^[a-zA-Z –-]+$',
   },
   {
     name: 'adult',
-    label: 'Cena dorosły',
+    label: 'Price adult',
     required: true,
     type: 'number',
   },
   {
     name: 'child',
-    label: 'Cena dziecko',
+    label: 'Price child',
     required: true,
     type: 'number',
   },

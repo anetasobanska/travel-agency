@@ -7,7 +7,7 @@
     <title>JavaScript: API oraz FETCH - admin, devmentor.pl</title>
   </head>
   <body>
-    <h1>Panel administratora</h1>
+    <h1>Administrator Panel</h1>
     <section class="panel">
       <ul class="panel__excursions excursions">
         <li data-id="1" class="excursions__item excursions__item--prototype">
@@ -22,39 +22,39 @@
           <form class="excursions__form">
             <div class="excursions__field">
               <label class="excursions__field-name">
-                Dorosły: <strong>99</strong>PLN
+                Adult: <strong>99</strong>EUR
               </label>
             </div>
             <div class="excursions__field">
               <label class="excursions__field-name">
-                Dziecko: <strong>50</strong>PLN
+                Child: <strong>50</strong>EUR
               </label>
             </div>
             <div class="excursions__field excursions__field--submit">
               <input
                 class="excursions__field-input excursions__field-input--update"
-                value="edytuj"
+                value="edit"
                 type="submit"
               />
               <input
                 class="excursions__field-input excursions__field-input--remove"
-                value="usuń"
+                value="delete"
                 type="submit"
               />
             </div>
           </form>
         </li>
       </ul>
-      <section>
+      <section class="panel__form">
         <form class="form" novalidate>
           <div class="form__row">
             <label class="form__label">
-              Nazwa:<input class="form__field" name="name" />
+              Name:<input class="form__field" name="name" />
             </label>
           </div>
           <div class="form__row">
             <label class="form__label">
-              Opis:<textarea
+              Description:<textarea
                 class="form__field form__field--longtext"
                 name="description"
               ></textarea>
@@ -62,7 +62,7 @@
           </div>
           <div class="form__row">
             <label class="form__label">
-              Cena dorosły:<input
+              Price adult:<input
                 class="form__field"
                 type="number"
                 name="adult"
@@ -71,8 +71,8 @@
           </div>
           <div class="form__row">
             <label class="form__label">
-              Cena dziecko:<input
-                class="order__form__field"
+              Price child:<input
+                class="order__form__field form__field"
                 type="number"
                 name="child"
               />
@@ -81,7 +81,7 @@
           <div class="order__field order__field--submit">
             <input
               class="order__field-input order__field-submit"
-              value="dodaj"
+              value="save"
               type="submit"
             />
           </div>

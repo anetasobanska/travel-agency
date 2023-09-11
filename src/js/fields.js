@@ -1,7 +1,7 @@
 export const fields = [
   {
     name: 'name',
-    label: 'Imię i nazwisko',
+    label: 'First name and last name',
     required: true,
     pattern: '^[a-zA-Z –-]+$',
   },
