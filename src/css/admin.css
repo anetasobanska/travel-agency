@@ -105,3 +105,24 @@ ul {
 .order__field-submit {
   background-color: var(--main-four);
 }
+
+@media (max-width: 600px) {
+  .panel {
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .panel__form {
+    width: 90%;
+  }
+  .order__field-name {
+    display: flex;
+    flex-direction: column;
+  }
+  .excursions__item {
+    width: 90%;
+  }
+  .panel__excursions {
+    justify-content: center;
+  }
+}
