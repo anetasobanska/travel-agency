@@ -10,7 +10,7 @@
     {
       "title": "krakow",
       "description": "opis krakowa",
-      "priceAdult": 400,
+      "priceAdult": 500,
       "priceChild": 300,
       "id": 3
     },
@@ -48,13 +48,6 @@
       "priceAdult": 200,
       "priceChild": 200,
       "id": 14
-    },
-    {
-      "title": "radom",
-      "description": "opis radomia",
-      "priceAdult": 400,
-      "priceChild": 300,
-      "id": 15
     }
   ],
   "orders": [
