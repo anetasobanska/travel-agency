@@ -52,8 +52,8 @@
     {
       "title": "radom",
       "description": "opis radomia",
-      "priceAdult": "400",
-      "priceChild": "300",
+      "priceAdult": 400,
+      "priceChild": 300,
       "id": 15
     }
   ],
@@ -73,6 +73,155 @@
       "childNumber": 1,
       "childPriceNum": 300,
       "id": 2
+    },
+    {
+      "title": "gdansk",
+      "adultNumber": 2,
+      "adultPriceNum": 500,
+      "childNumber": 1,
+      "childPriceNum": 200,
+      "id": 3
+    },
+    {
+      "title": {
+        "title": "zamosc",
+        "adultNumber": 2,
+        "adultPrice": 200,
+        "childNumber": 3,
+        "childPrice": 100
+      },
+      "name": "Aneta Sobanska",
+      "email": "sannettka@gmail.com",
+      "id": 4
+    },
+    {
+      "excursions": [
+        {
+          "title": "gniezno",
+          "adultNumber": 2,
+          "adultPrice": 200,
+          "childNumber": 3,
+          "childPrice": 200
+        }
+      ],
+      "name": "Jan Kowalski",
+      "email": "jan@jan.com",
+      "id": 5
+    },
+    {
+      "excursions": [
+        {
+          "title": "lublin",
+          "adultNumber": 2,
+          "adultPrice": 200,
+          "childNumber": 1,
+          "childPrice": 300
+        },
+        {
+          "title": "zamosc",
+          "adultNumber": 2,
+          "adultPrice": 200,
+          "childNumber": 2,
+          "childPrice": 100
+        }
+      ],
+      "name": "Ola Wisniewska",
+      "email": "ola@emai.pl",
+      "id": 6
+    },
+    {
+      "excursions": [
+        {
+          "title": "gdansk",
+          "adultNumber": 2,
+          "adultPrice": 500,
+          "childNumber": 3,
+          "childPrice": 200
+        }
+      ],
+      "name": "Maja O",
+      "email": "email.email.com",
+      "id": 7
+    },
+    {
+      "excursions": [
+        {
+          "title": "gdansk",
+          "adultNumber": 2,
+          "adultPrice": 500,
+          "childNumber": 3,
+          "childPrice": 200
+        }
+      ],
+      "name": "Aneta Sobanska",
+      "email": "sannettka@gmail.com",
+      "totalPrice": {},
+      "id": 8
+    },
+    {
+      "excursions": [
+        {
+          "title": "gdansk",
+          "adultNumber": 2,
+          "adultPrice": 500,
+          "childNumber": 3,
+          "childPrice": 200
+        },
+        {
+          "title": "krakow",
+          "adultNumber": 2,
+          "adultPrice": 400,
+          "childNumber": 3,
+          "childPrice": 300
+        }
+      ],
+      "name": "Maja O",
+      "email": "ola@emai.pl",
+      "id": 9
+    },
+    {
+      "excursions": [
+        {
+          "title": "gdansk",
+          "adultNumber": 2,
+          "adultPrice": 500,
+          "childNumber": 3,
+          "childPrice": 200
+        },
+        {
+          "title": "krakow",
+          "adultNumber": 1,
+          "adultPrice": 400,
+          "childNumber": 1,
+          "childPrice": 300
+        }
+      ],
+      "name": "Jan Kowalski",
+      "email": "jan@jan.com",
+      "totalPrice": "2300PLN",
+      "id": 10
+    },
+    {
+      "excursions": [
+        {
+          "title": "gdansk",
+          "adultNumber": 2,
+          "adultPrice": 500,
+          "childNumber": 3,
+          "childPrice": 200
+        },
+        {
+          "title": "krakow",
+          "adultNumber": 1,
+          "adultPrice": 400,
+          "childNumber": 1,
+          "childPrice": 300
+        }
+      ],
+      "name": "Jan Kowalski",
+      "email": "jan@jan.com",
+      "totalPrice": 2300,
+      "id": 11
     }
   ]
 }

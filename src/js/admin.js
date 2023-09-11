@@ -1,35 +1,12 @@
 import './../css/admin.css';
+import { validate } from './validate';
+import { excursionFields } from './excursionFields';
 
 import ExcursionsAPI from './ExcursionsAPI';
 const api = new ExcursionsAPI();
 
 console.log('admin');
-const excursionFields = [
-  {
-    name: 'name',
-    label: 'Nazwa',
-    required: true,
-    pattern: '^[a-zA-Z –-]+$',
-  },
-  {
-    name: 'description',
-    label: 'Opis',
-    required: true,
-    pattern: '^[a-zA-Z –-]+$',
-  },
-  {
-    name: 'adult',
-    label: 'Cena dorosły',
-    required: true,
-    type: 'number',
-  },
-  {
-    name: 'child',
-    label: 'Cena dziecko',
-    required: true,
-    type: 'number',
-  },
-];
+
 const ulMessagesExcursion = document.createElement('ul');
 
 document.addEventListener('DOMContentLoaded', init);
@@ -88,39 +65,6 @@ function addExcursion() {
       });
     }
   });
-}
-
-function validate(fields, data) {
-  const errors = [];
-
-  fields.forEach(function (field) {
-    const value = data[field.name].value;
-
-    if (field.required) {
-      if (value.length === 0) {
-        errors.push('Dane w polu ' + field.label + ' są wymagane.');
-      }
-    }
-
-    if (field.type === 'number') {
-      if (Number.isNaN(Number(value))) {
-        errors.push('Dane w polu ' + field.label + ' muszą być liczbą.');
-      }
-    }
-
-    if (field.pattern) {
-      const reg = new RegExp(field.pattern);
-      if (!reg.test(value)) {
-        errors.push(
-          'Dane w polu ' +
-            field.label +
-            ' zawierają niedozwolone znaki lub nie są zgodne z przyjętym w Polsce wzorem.'
-        );
-      }
-    }
-  });
-
-  return errors;
 }
 
 function insertExcursion(data) {
@@ -184,8 +128,8 @@ function updateExcursions() {
         const data = {
           title: editableFieldList[0].innerText,
           description: editableFieldList[1].innerText,
-          priceAdult: editableFieldList[2].innerText,
-          priceChild: editableFieldList[3].innerText,
+          priceAdult: Number(editableFieldList[2].innerText),
+          priceChild: Number(editableFieldList[3].innerText),
         };
         api
           .update(id, data)

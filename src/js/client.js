@@ -1,5 +1,9 @@
 import './../css/client.css';
 import ExcursionsAPI from './ExcursionsAPI';
+import { numOfPeopleFields } from './numOfPeopleFields';
+import { fields } from './fields';
+import { validate } from './validate';
+
 const api = new ExcursionsAPI();
 
 console.log('client');
@@ -11,37 +15,12 @@ const excursions = document.querySelector('.excursions');
 function init() {
   const totalPriceReset = document.querySelector('.order__total-price-value');
   totalPriceReset.innerText = '';
-  const fields = [
-    {
-      name: 'name',
-      label: 'Imię i nazwisko',
-      required: true,
-      pattern: '^[a-zA-Z –-]+$',
-    },
-    {
-      name: 'email',
-      label: 'Email',
-      required: true,
-      pattern: '^[a-z0-9]+@[a-z]+.[a-z]{2,3}$',
-    },
-  ];
-  const excursionFields = [
-    {
-      name: 'adults',
-      label: 'Dorosły',
-      type: 'number',
-    },
-    {
-      name: 'children',
-      label: 'Dziecko',
-      type: 'number',
-    },
-  ];
+
   const order = document.querySelector('.order');
   const ulMessages = document.createElement('ul');
   const ulMessagesExcursion = document.createElement('ul');
   excursions.addEventListener('submit', function (e) {
-    addToBasket(e, excursionFields, ulMessagesExcursion);
+    addToBasket(e, numOfPeopleFields, ulMessagesExcursion);
   });
   order.addEventListener('submit', function (e) {
     confirmOrder(e, fields, order, ulMessages);
@@ -86,7 +65,7 @@ function insertExcursion(data) {
   });
 }
 
-function addToBasket(e, excursionFields, ulMessagesExcursion) {
+function addToBasket(e, numOfPeopleFields, ulMessagesExcursion) {
   e.preventDefault();
 
   const [adultElement, childElement] = e.target.elements;
@@ -104,10 +83,10 @@ function addToBasket(e, excursionFields, ulMessagesExcursion) {
   const childPriceNum = Number(childPrice.replace(/\D/g, ''));
 
   e.target.appendChild(ulMessagesExcursion);
-  const errors = validate(excursionFields, e.target.elements);
+  const errors = validate(numOfPeopleFields, e.target.elements);
   ulMessagesExcursion.innerText = '';
   if (errors.length === 0) {
-    excursionFields.forEach(function (field) {
+    numOfPeopleFields.forEach(function (field) {
       e.target.elements[field.name].value = '';
     });
   } else {
@@ -133,11 +112,6 @@ function addToBasket(e, excursionFields, ulMessagesExcursion) {
     childNumber,
     childPriceNum
   );
-
-  api
-    .addOrder({ title, adultNumber, adultPriceNum, childNumber, childPriceNum })
-    .then((res) => console.log(res))
-    .catch((err) => console.log(err));
 }
 
 function pushExcursionToBasket(
@@ -234,6 +208,26 @@ function confirmOrder(e, fields, order, ulMessages) {
   const summary = order.parentElement.lastElementChild;
   const errors = validate(fields, e.target.elements);
 
+  const [nameEl, emailEl] = order.elements;
+  const name = nameEl.value;
+  const email = emailEl.value;
+  const totalPrice = Number(
+    order.firstElementChild.firstElementChild.textContent.replace(/\D/g, '')
+  );
+  console.log('totalPrice', totalPrice);
+
+  const newBasket = {
+    excursions: basket,
+    name,
+    email,
+    totalPrice,
+  };
+
+  api
+    .addOrder(newBasket)
+    .then((res) => console.log(res))
+    .catch((err) => console.log(err));
+
   ulMessages.innerText = '';
   if (errors.length === 0) {
     alert('Dane zostaly wypelnione prawidlowo');
@@ -250,39 +244,6 @@ function confirmOrder(e, fields, order, ulMessages) {
       ulMessages.appendChild(li);
     });
   }
-}
-
-function validate(fields, data) {
-  const errors = [];
-
-  fields.forEach(function (field) {
-    const value = data[field.name].value;
-
-    if (field.required) {
-      if (value.length === 0) {
-        errors.push('Dane w polu ' + field.label + ' są wymagane.');
-      }
-    }
-
-    if (field.type === 'number') {
-      if (Number.isNaN(Number(value))) {
-        errors.push('Dane w polu ' + field.label + ' muszą być liczbą.');
-      }
-    }
-
-    if (field.pattern) {
-      const reg = new RegExp(field.pattern);
-      if (!reg.test(value)) {
-        errors.push(
-          'Dane w polu ' +
-            field.label +
-            ' zawierają niedozwolone znaki lub nie są zgodne z przyjętym w Polsce wzorem.'
-        );
-      }
-    }
-  });
-
-  return errors;
 }
 
 function calculateTotalPrice() {
