@@ -8,13 +8,13 @@ The aplication is divided into two sections: the Customer section, where you can
 
 This is the part related to what the user can do:
 
-* select a trip by entering the number of tickets to be ordered in the appropriate form fields and clicking `make reservation`. It's connected with:
+* select a trip by entering the number of ordered tickets in the appropriate form fields and clicking `make reservation`. It's connected with:
   * data validation
   * adding the order to the panel on the right, to the basket
-  * updating the price for the whole
+  * updating the total price
 * confirm the order by entering your name, surname and email address in the order field and clicking `buy`. It's connected with:
   * data validation
-  * sending the order to the database (in our case it will be an API launched thanks to JSON Server)
+  * sending the order to the database (API launched using JSON Server)
   * clearing the basket.
 
 ![client](./src/img/client.png)
