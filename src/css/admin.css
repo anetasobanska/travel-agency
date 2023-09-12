@@ -14,6 +14,9 @@
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
 }
+body {
+  margin-top: 20px;
+}
 
 ul {
   list-style: none;
@@ -23,7 +26,14 @@ ul {
   display: flex;
   margin: 0 auto;
   max-width: 1200px;
-  padding: 30px 0;
+}
+h1 {
+  padding: 20px;
+  background-color: var(--main-two);
+  color: #ffffff;
+  border-radius: var(--border-radius-btn);
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .panel__excursins {
@@ -63,7 +73,7 @@ ul {
 .excursions__item {
   border: 1px solid #bbb;
   border-radius: 5px;
-  margin: 10px;
+  margin: 10px 10px 10px 0;
   padding: 20px;
   width: calc(50% - 20px);
   background-color: var(--main-three);
@@ -112,7 +122,8 @@ ul {
     flex-direction: column-reverse;
     align-items: center;
   }
-  .panel__form {
+  .panel__form,
+  h1 {
     width: 90%;
   }
   .order__field-name {
@@ -121,6 +132,7 @@ ul {
   }
   .excursions__item {
     width: 90%;
+    margin: 10px 0 10px 0;
   }
   .panel__excursions {
     justify-content: center;

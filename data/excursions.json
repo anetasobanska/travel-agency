@@ -1,53 +1,46 @@
 {
   "excursions": [
     {
-      "title": "gdansk",
-      "description": "opis gdanska",
+      "title": "Rio de Janeiro",
+      "description": "Rio de Janeiro means January River, but the river is actually a bay. Rio de Janeiro, or January River, is a very poetic name for a city with more than 200 rivers running through it. But which river does it refer to? Well, the answer is: none of them.",
       "priceAdult": 500,
       "priceChild": 200,
       "id": 1
     },
     {
-      "title": "krakow",
-      "description": "opis krakowa",
+      "title": "Lisbon",
+      "description": "Lisbon is one of the oldest cities of Europe.Lisbon is one of the oldest cities of Europe. Archaeological evidence suggests the city has been inhabited since prehistoric ages. Historical records take back the city’s history to 205 BC when it was first invaded by the Romans. One of the fun facts about Lisbon is that the Romans called it Olissipo then.",
       "priceAdult": 500,
       "priceChild": 300,
       "id": 3
     },
     {
-      "title": "lublin",
-      "description": "opis miasta",
+      "title": "Tokyo",
+      "description": "It boasts the most Michelin stars in the world. Tokyo has held onto its title for more than a decade. The city boasts the most Michel stars in the world, with 212 Michelin starred restaurants in total. There are 14 three-star, 42 two-star and 158 one-star restaurants. Kanda, Quintessence, and Joël Robuchon are three of the most famous three-star restaurants in the world.",
       "priceAdult": 200,
       "priceChild": 300,
       "id": 6
     },
     {
-      "title": "zamosc",
-      "description": "opis",
+      "title": "Rome",
+      "description": "Rome, the “Eternal City,” brims with ancient history, from the Colosseum to the port of Ostia Antica to majestic Vatican City and the Sistine Chapel. Because of its history, art, architecture, and beauty – and perhaps its gelato and pasta! – Rome is one of our most popular cities.Rome, the “Eternal City,” brims with ancient history, from the Colosseum to the port of Ostia Antica to majestic Vatican City and the Sistine Chapel. Because of its history, art, architecture, and beauty – and perhaps its gelato and pasta! – Rome is one of our most popular cities.",
       "priceAdult": 200,
       "priceChild": 100,
       "id": 8
     },
     {
-      "title": "gniezno",
-      "description": "opis",
+      "title": "Dublin",
+      "description": "Mainly known for its pubs, music culture and being home to the beer brand Guinness, there are yet way more things to know about Dublin! The name Dublin comes from an old Irish Celtic name meaning “Black Pool”. Dublin has been founded twice by the Vikings. The first time in 841 AD and the second time in 917. It then became a very wealthy settlement and developed into the City of Dublin.",
       "priceAdult": 200,
       "priceChild": 200,
       "id": 10
     },
     {
-      "title": "kazimierz",
-      "description": "opis",
-      "priceAdult": 200,
-      "priceChild": 200,
-      "id": 13
-    },
-    {
-      "title": "olsztyn",
-      "description": "opis",
-      "priceAdult": 200,
-      "priceChild": 200,
-      "id": 14
+      "title": "New York City",
+      "description": "New York City, officially the City of New York, historically New Amsterdam, the Mayor, Alderman, and Commonality of the City of New York, and New Orange, by name the Big Apple.",
+      "priceAdult": 500,
+      "priceChild": 300,
+      "id": 15
     }
   ],
   "orders": [
@@ -215,6 +208,42 @@
       "email": "jan@jan.com",
       "totalPrice": 2300,
       "id": 11
+    },
+    {
+      "excursions": [],
+      "name": "Jan Kowalski",
+      "email": "jan@jan.com",
+      "totalPrice": 0,
+      "id": 12
+    },
+    {
+      "excursions": [],
+      "name": "Jan Kowalski",
+      "email": "jan@jan.com",
+      "totalPrice": 0,
+      "id": 13
+    },
+    {
+      "excursions": [],
+      "name": "Jan Kowalski",
+      "email": "jan@jan.com",
+      "totalPrice": 0,
+      "id": 14
+    },
+    {
+      "excursions": [
+        {
+          "title": "Lisbon",
+          "adultNumber": 2,
+          "adultPrice": 500,
+          "childNumber": 3,
+          "childPrice": 300
+        }
+      ],
+      "name": "Jan Kowalski",
+      "email": "jan@jan.com",
+      "totalPrice": 1900,
+      "id": 15
     }
   ]
 }

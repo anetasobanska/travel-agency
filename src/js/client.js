@@ -197,7 +197,7 @@ function calcOrderTotalPrice() {
   const orderTotalPriceOrder = document.querySelector(
     '.order__total-price-value'
   );
-  orderTotalPriceOrder.innerText = orderTotalPrice + 'PLN';
+  orderTotalPriceOrder.innerText = orderTotalPrice + 'EUR';
   return orderTotalPrice;
 }
 
@@ -222,19 +222,21 @@ function confirmOrder(e, fields, order, ulMessages) {
     totalPrice,
   };
 
-  api
-    .addOrder(newBasket)
-    .then((res) => console.log(res))
-    .catch((err) => console.log(err));
-
   ulMessages.innerText = '';
-  if (errors.length === 0) {
-    alert('Dane zostaly wypelnione prawidlowo');
+  if (errors.length === 0 && newBasket.excursions.length > 0) {
+    alert('The data has been filled in correctly.');
     order.firstElementChild.firstElementChild.innerText = '';
     summary.innerText = '';
     fields.forEach(function (field) {
       e.target.elements[field.name].value = '';
     });
+
+    api
+      .addOrder(newBasket)
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+  } else if (newBasket.excursions.length === 0) {
+    alert('Your basket is empty.');
   } else {
     errors.forEach((err) => {
       const li = document.createElement('li');
